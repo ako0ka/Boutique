@@ -94,6 +94,17 @@ margin-right: 10px;
   font-size: 1.2rem;
   color: red;
 }
+#addtocart{
+  display: flex;
+  
+  height: 50px;
+  width: 100px;
+  margin-left: 500px;
+  margin-top: -40px;
+}
+
+
+
 .quantity{
   color: aliceblue;
   font-size: 1rem;

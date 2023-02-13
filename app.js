@@ -154,9 +154,24 @@ const inputarea = document.getElementById("search")
 
 inputarea.addEventListener("input", function() {
     if(inputarea.value === "All"){
-        cardContainer.innerHTML = clothing.mao(cloth => renderItem(cloth))
+        cardContainer.innerHTML = clothing.map(cloth => renderItem(cloth))
     }else if(inputarea.value ==="kids" || inputarea.value === "Men" || inputarea.value === "Women"){
         let filtered = clothing.filter(cloth => cloth.category === inputarea.value)
         cardContainer.innerHTML = filtered.map(cloth => renderItem(cloth))
     }
 })
+
+// const addtocart = document.querySelector(".add-button")
+// console.log(addtocart);
+
+const addToCartButtons = document.querySelectorAll('.add-button');
+const addToCartInput = document.querySelector('#addtocart');
+
+addToCartButtons.forEach(function(button) {
+  button.addEventListener('click', function() {
+    const cardTitle = button.parentElement.querySelector('.card-title').innerText;
+    const cardPrice = button.parentElement.querySelector('.card-price').innerText;
+    addToCartInput.value += `${cardTitle} - ${cardPrice}\n`;
+  });
+});
+
